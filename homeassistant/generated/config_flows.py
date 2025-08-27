@@ -124,6 +124,7 @@ FLOWS = {
         "cpuspeed",
         "crownstone",
         "daikin",
+        "daybetter_light_local",
         "deako",
         "deconz",
         "deluge",
