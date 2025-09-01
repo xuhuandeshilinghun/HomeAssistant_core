@@ -15,7 +15,6 @@ from homeassistant import config_entries
 from homeassistant.components import network
 from homeassistant.config_entries import ConfigFlowResult
 from homeassistant.core import HomeAssistant
-from homeassistant.exceptions import HomeAssistantError
 
 from .const import (
     CONF_LISTENING_PORT_DEFAULT,
@@ -33,9 +32,7 @@ async def _async_discover_devices(
 ) -> list[dict[str, Any]] | str:
     """Discover DayBetter devices. If host is given, probe only that host."""
 
-
     adapter = await network.async_get_source_ip(hass, network.PUBLIC_TARGET_IP)
-
 
     controller = DayBetterController(
         loop=hass.loop,
